@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   ThemeProvider,
-  useTheme,
   createTheme,
 } from "@mui/material";
 import { Roboto } from "next/font/google";
