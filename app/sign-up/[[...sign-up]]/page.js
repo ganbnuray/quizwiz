@@ -13,13 +13,16 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const medievalSharp = MedievalSharp({ subsets: ["latin"], weight: ["400"] });
 import { SignUp } from "@clerk/nextjs";
-
+import { useEffect } from "react";
 const theme = createTheme({
   typography: {
     fontFamily: `${roboto.style.fontFamily}, sans-serif`,
   },
 });
 export default function SignUpPage() {
+  useEffect(() => {
+    document.title = "QuizWiz | Sign up"; // Change this to the title you want for this page
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <>

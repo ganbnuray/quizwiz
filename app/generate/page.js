@@ -41,12 +41,16 @@ const theme = createTheme({
   },
 });
 export default function Generate() {
+  useEffect(() => {
+    document.title = "QuizWiz | Flashcards"; // Change this to the title you want for this page
+  }, []);
   const router = useRouter();
   const { isLoaded, isSignedIn, user } = useUser();
   const [flashcardSets, setFlashcardSets] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredSets, setFilteredSets] = useState([]);
-
+  const [nameError, setNameError] = useState("");
+  const [textError, setTextError] = useState("");
   useEffect(() => {
     if (!user) return;
 
@@ -84,16 +88,37 @@ export default function Generate() {
   const [name, setName] = useState("");
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (name) {
+      setNameError("");
+    }
+    if (text.trim()) {
+      setTextError("");
+    }
+  }, [name, text]);
+
   const handleSubmit = async () => {
-    handleClose();
     if (!name) {
-      alert("Please enter a name");
+      setNameError("Please enter a name");
       return;
-    } else if (!text.trim()) {
-      alert("Please enter some text to generate flashcards.");
+    } else if (name.length > 35) {
+      setNameError("Please enter a shorter name");
       return;
+    } else {
+      setNameError("");
     }
 
+    if (!text.trim()) {
+      setTextError("Please enter flashcard description");
+      return;
+    } else if (text.length > 35) {
+      setTextError("Please enter a shorter description");
+      return;
+    } else {
+      setTextError("");
+    }
+
+    handleClose();
     try {
       const response = await fetch("/api/generate", {
         method: "POST",
@@ -138,6 +163,8 @@ export default function Generate() {
     setOpen(false);
     setName("");
     setText("");
+    setNameError("");
+    setTextError("");
   };
 
   return (
@@ -454,6 +481,15 @@ export default function Generate() {
                     },
                   }}
                 />
+                <Typography
+                  sx={{
+                    display: nameError === "" ? "none" : "block",
+                    color: "red",
+                  }}
+                >
+                  {nameError}
+                </Typography>
+
                 <DialogContentText sx={{ color: "#fff", mt: 2 }}>
                   Description
                 </DialogContentText>
@@ -488,7 +524,16 @@ export default function Generate() {
                     },
                   }}
                 />
+                <Typography
+                  sx={{
+                    display: textError === "" ? "none" : "block",
+                    color: "red",
+                  }}
+                >
+                  {textError}
+                </Typography>
               </DialogContent>
+
               <DialogActions
                 sx={{
                   display: "flex",

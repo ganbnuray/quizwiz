@@ -55,7 +55,9 @@ export default function Flashcard() {
 
   const searchParams = useSearchParams();
   const search = searchParams.get("id");
-
+  useEffect(() => {
+    document.title = `QuizWiz | ${search}`; // Change this to the title you want for this page
+  }, []);
   useEffect(() => {
     async function getFlashcards() {
       if (!search || !user) return;

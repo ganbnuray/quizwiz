@@ -5,8 +5,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Flashcards SaaS",
-  description: "Generate flashcards from text",
+  title: "QuizWiz",
+  description: "Generate flashcards from text using AI",
 };
 
 export default function RootLayout({ children }) {
