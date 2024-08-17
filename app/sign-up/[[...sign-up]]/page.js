@@ -22,6 +22,9 @@ const theme = createTheme({
 export default function SignUpPage() {
   return (
     <ThemeProvider theme={theme}>
+      <>
+        <link rel="icon" href="wizard.svg" />
+      </>
       <Container maxWidth={"false"} disableGutters width="100vw" margin="auto">
         <Box
           sx={{

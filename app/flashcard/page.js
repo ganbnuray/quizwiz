@@ -88,6 +88,9 @@ export default function Flashcard() {
   //console.log(flashcards);
   return (
     <ThemeProvider theme={theme}>
+      <>
+        <link rel="icon" href="wizard.svg" />
+      </>
       <Container maxWidth={"false"} disableGutters width="100vw" margin="auto">
         <Box
           sx={{

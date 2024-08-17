@@ -54,6 +54,9 @@ export default function Home() {
   const { isSignedIn } = useAuth();
   return (
     <ThemeProvider theme={theme}>
+      <>
+        <link rel="icon" href="wizard.svg" />
+      </>
       <Container maxWidth={"false"} disableGutters width="100vw" margin="auto">
         <Box
           sx={{
