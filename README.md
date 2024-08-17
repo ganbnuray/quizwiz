@@ -33,5 +33,5 @@ To run the project locally, follow these steps:
 - ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=flat&logo=mui&logoColor=white): UI components
 - ![Next JS](https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white) and ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB): Functionalities and routing
 - ![Firebase](https://img.shields.io/badge/firebase-a08021?style=flat&logo=firebase&logoColor=ffcd34): Storing flashcard sets for a given user
-- ![Clerk](https://img.shields.io/badge/clerk-%23000000.svg?style=flat&logo=clerk&logoColor=white): Deployment
+- ![Clerk](https://img.shields.io/badge/clerk-%23000000.svg?style=flat&logo=clerk&logoColor=white): User login & signups
 - ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white): Deployment
