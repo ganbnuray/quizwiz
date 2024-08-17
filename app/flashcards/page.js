@@ -13,6 +13,7 @@ import {
 import { useUser } from "@clerk/nextjs";
 import { db } from "../../firebase";
 import { getDocs, collection } from "firebase/firestore";
+
 export default function Flashcard() {
   const { isLoaded, isSignedIn, user } = useUser();
   const [flashcardSets, setFlashcards] = useState([]);
