@@ -11,6 +11,7 @@ import { Roboto } from "next/font/google";
 import { MedievalSharp } from "next/font/google";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { styled } from "@mui/system";
+import { useAuth } from "@clerk/nextjs";
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const medievalSharp = MedievalSharp({ subsets: ["latin"], weight: ["400"] });
 export default function Home() {
@@ -50,6 +51,7 @@ export default function Home() {
       fontFamily: `${roboto.style.fontFamily}, sans-serif`,
     },
   });
+  const { isSignedIn } = useAuth();
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={"false"} disableGutters width="100vw" margin="auto">
@@ -201,7 +203,7 @@ export default function Home() {
               learners.
             </Typography>
             <Button
-              href="/sign-up"
+              href={isSignedIn ? "/generate" : "/sign-up"}
               variant="contained"
               sx={{
                 marginTop: 3,
@@ -220,7 +222,8 @@ export default function Home() {
                   fontWeight: "bold",
                 }}
               >
-                Get started
+                <SignedOut>Get started</SignedOut>
+                <SignedIn>Continue</SignedIn>
               </Typography>
             </Button>
           </Box>
@@ -243,7 +246,7 @@ export default function Home() {
             }}
           >
             <Typography variant="h6" color="#fff">
-              Made with ❤️ by Nuray Ganbarova
+              Your Ultimate Study Companion
             </Typography>
           </Box>
         </Box>

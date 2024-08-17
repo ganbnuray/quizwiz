@@ -525,6 +525,7 @@ export default function Generate() {
             </Dialog>
           </Box>
         </Box>
+
         <SignedOut>
           <RedirectToSignIn redirectUrl="/sign-in" />
         </SignedOut>
