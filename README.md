@@ -6,7 +6,7 @@
 
 ## Demo
 
-![QuizWiz Demo](/public/quizwizdemo.mp4)
+You can watch the demo video (quizwizdemo.mp4) in the public directory. Alternatively you can view a more detailed video [here](https://www.youtube.com/watch?v=wcAFzKUBCq4).
 
 ## Installation
 
