@@ -8,7 +8,7 @@
 
 ### Online
 
-You can use the live site at [QuizWiz](<[https://panman.vercel.app/](https://quizwizard.vercel.app/)>).
+You can use the live site at [QuizWiz](https://quizwizard.vercel.app/).
 
 ### Local
 
