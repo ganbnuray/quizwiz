@@ -4,6 +4,10 @@
 
 > QuizWiz is an app that uses AI to generate flashcards from text prompts, making your study sessions more efficient and personalized. Embrace a smarter way to learn with QuizWiz and transform your study routine!
 
+## Demo
+
+![QuizWiz Demo](/public/quizwizdemo.mp4)
+
 ## Installation
 
 ### Online
